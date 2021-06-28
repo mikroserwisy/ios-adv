@@ -39,6 +39,11 @@
 		A8D2E34B268A0563000C3CFB /* View+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E347268A0563000C3CFB /* View+ext.swift */; };
 		A8D2E34C268A0563000C3CFB /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E348268A0563000C3CFB /* ButtonStyle.swift */; };
 		A8D2E34E268A07E1000C3CFB /* Color+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E34D268A07E1000C3CFB /* Color+ext.swift */; };
+		A8D2E350268A12A0000C3CFB /* ForecastViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E34F268A12A0000C3CFB /* ForecastViewModelMapper.swift */; };
+		A8D2E354268A163B000C3CFB /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E353268A163B000C3CFB /* Route.swift */; };
+		A8D2E356268A16DA000C3CFB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E355268A16DA000C3CFB /* Router.swift */; };
+		A8D2E358268A1744000C3CFB /* ForecastDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E357268A1744000C3CFB /* ForecastDetails.swift */; };
+		A8D2E35A268A179D000C3CFB /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E359268A179D000C3CFB /* RouterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +115,11 @@
 		A8D2E347268A0563000C3CFB /* View+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+ext.swift"; sourceTree = "<group>"; };
 		A8D2E348268A0563000C3CFB /* ButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		A8D2E34D268A07E1000C3CFB /* Color+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ext.swift"; sourceTree = "<group>"; };
+		A8D2E34F268A12A0000C3CFB /* ForecastViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModelMapper.swift; sourceTree = "<group>"; };
+		A8D2E353268A163B000C3CFB /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		A8D2E355268A16DA000C3CFB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A8D2E357268A1744000C3CFB /* ForecastDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetails.swift; sourceTree = "<group>"; };
+		A8D2E359268A179D000C3CFB /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,9 +170,10 @@
 		A80D5DCE2689C339003876F9 /* GoodWeather */ = {
 			isa = PBXGroup;
 			children = (
-				A8D2E33E268A01D3000C3CFB /* DependencyInjection */,
+				A8D2E351268A15C6000C3CFB /* Commons */,
 				A80D5DFA2689C3A6003876F9 /* Forecast */,
 				A80D5DCF2689C33A003876F9 /* GoodWeatherApp.swift */,
+				A8D2E359268A179D000C3CFB /* RouterView.swift */,
 				A8D2E2E92689D7F2000C3CFB /* ApplicationFactory.swift */,
 				A80D5DD32689C33B003876F9 /* Assets.xcassets */,
 				A80D5DD82689C33B003876F9 /* Info.plist */,
@@ -290,6 +301,7 @@
 			children = (
 				A8D2E3032689DCB3000C3CFB /* DayForecastViewModel.swift */,
 				A8D2E3042689DCB3000C3CFB /* ForecastViewModel.swift */,
+				A8D2E34F268A12A0000C3CFB /* ForecastViewModelMapper.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -299,6 +311,7 @@
 			children = (
 				A8D2E3062689DCB3000C3CFB /* ForecastView.swift */,
 				A8D2E342268A049B000C3CFB /* DayForecastView.swift */,
+				A8D2E357268A1744000C3CFB /* ForecastDetails.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,6 +336,24 @@
 				A8D2E34D268A07E1000C3CFB /* Color+ext.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		A8D2E351268A15C6000C3CFB /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				A8D2E352268A15D3000C3CFB /* Router */,
+				A8D2E33E268A01D3000C3CFB /* DependencyInjection */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		A8D2E352268A15D3000C3CFB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A8D2E353268A163B000C3CFB /* Route.swift */,
+				A8D2E355268A16DA000C3CFB /* Router.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,7 +489,10 @@
 				A80D5E022689C658003876F9 /* Forecast.swift in Sources */,
 				A80D5E1B2689CD37003876F9 /* FakeForecastProvider.swift in Sources */,
 				A80D5E052689C718003876F9 /* GetForecastUseCase.swift in Sources */,
+				A8D2E354268A163B000C3CFB /* Route.swift in Sources */,
 				A8D2E34A268A0563000C3CFB /* Text+ext.swift in Sources */,
+				A8D2E356268A16DA000C3CFB /* Router.swift in Sources */,
+				A8D2E35A268A179D000C3CFB /* RouterView.swift in Sources */,
 				A80D5E192689CCBF003876F9 /* ForecastDto.swift in Sources */,
 				A8D2E34E268A07E1000C3CFB /* Color+ext.swift in Sources */,
 				A8D2E3082689DCB3000C3CFB /* ForecastViewModel.swift in Sources */,
@@ -466,6 +500,7 @@
 				A8D2E33F268A02D7000C3CFB /* Dependency.swift in Sources */,
 				A80D5E002689C56F003876F9 /* DayForecast.swift in Sources */,
 				A80D5E0C2689C964003876F9 /* ForecastProvider.swift in Sources */,
+				A8D2E358268A1744000C3CFB /* ForecastDetails.swift in Sources */,
 				A8D2E34B268A0563000C3CFB /* View+ext.swift in Sources */,
 				A8D2E341268A02DD000C3CFB /* Container.swift in Sources */,
 				A8D2E3072689DCB3000C3CFB /* DayForecastViewModel.swift in Sources */,
@@ -478,6 +513,7 @@
 				A8D2E349268A0563000C3CFB /* Image+ext.swift in Sources */,
 				A80D5E132689CB54003876F9 /* ConditionsDto.swift in Sources */,
 				A80D5E172689CC86003876F9 /* CityDto.swift in Sources */,
+				A8D2E350268A12A0000C3CFB /* ForecastViewModelMapper.swift in Sources */,
 				A80D5E072689C7B6003876F9 /* GetForecastError.swift in Sources */,
 				A8D2E2EA2689D7F2000C3CFB /* ApplicationFactory.swift in Sources */,
 				A8D2E34C268A0563000C3CFB /* ButtonStyle.swift in Sources */,

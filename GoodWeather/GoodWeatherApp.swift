@@ -5,7 +5,7 @@ struct GoodWeatherApp: App {
     
     private var container = Container {
         Dependency { URLSessionForecastProvider() }
-        //Dependency { FakeForecastProvider() }
+        Dependency { ForecastViewModelMapper() }
         Dependency { GetForecastService()}
     }
     
@@ -15,7 +15,8 @@ struct GoodWeatherApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ForecastView(viewModel: ForecastViewModel())
+            RouterView()
+                .environmentObject(Router())
         }
     }
     

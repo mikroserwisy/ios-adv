@@ -4,12 +4,17 @@ struct ForecastView: View {
     
     @ObservedObject
     var viewModel : ForecastViewModel
+    @EnvironmentObject
+    var router: Router
 
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.primary, Color.secondary]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack {
+                Button("Show details") {
+                    router.route = .forecastDetails
+                }
                 Spacer()
                 if let currentForecast = viewModel.currentForecast{
                     Image(systemName: currentForecast.icon)
