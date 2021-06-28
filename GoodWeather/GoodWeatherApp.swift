@@ -1,17 +1,22 @@
-//
-//  GoodWeatherApp.swift
-//  GoodWeather
-//
-//  Created by Paweł Andrzejewski on 28/06/2021.
-//
-
 import SwiftUI
 
 @main
 struct GoodWeatherApp: App {
+    
+    private var container = Container {
+        Dependency { URLSessionForecastProvider() }
+        //Dependency { FakeForecastProvider() }
+        Dependency { GetForecastService()}
+    }
+    
+    init() {
+        container.build()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ForecastView(viewModel: ForecastViewModel())
         }
     }
+    
 }
