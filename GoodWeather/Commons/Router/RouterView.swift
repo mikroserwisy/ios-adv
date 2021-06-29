@@ -9,7 +9,7 @@ struct RouterView: View {
     var body: some View {
         switch router.route {
         case .forecast:
-            ForecastView(viewModel: ForecastViewModel(getForecastUseCase: Resolver.resolve()))
+            ForecastView(viewModel: ForecastViewModel())
         case .forecastDetails:
             ForecastDetails()
         }

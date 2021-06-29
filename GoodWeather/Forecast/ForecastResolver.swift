@@ -10,6 +10,7 @@ extension Resolver {
         register { URLSessionForecastProvider() as ForecastProvider }
         register(name: .fake) { FakeForecastProvider() as ForecastProvider }
         register { ForecastViewModelMapper() }
+        register { CoreLocationProvider() as LocationProvider }
         register { GetForecastService(forecastProvider: resolve()) }
             .implements(GetForecastUseCase.self)
     }

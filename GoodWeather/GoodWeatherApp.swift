@@ -6,7 +6,7 @@ struct GoodWeatherApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ForecastView(viewModel: ForecastViewModel(getForecastUseCase: Resolver.resolve()))
+            ForecastView(viewModel: ForecastViewModel())
         }
     }
     
