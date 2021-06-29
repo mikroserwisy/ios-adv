@@ -10,7 +10,7 @@
 		A80D5DD02689C33A003876F9 /* GoodWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5DCF2689C33A003876F9 /* GoodWeatherApp.swift */; };
 		A80D5DD42689C33B003876F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80D5DD32689C33B003876F9 /* Assets.xcassets */; };
 		A80D5DD72689C33B003876F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80D5DD62689C33B003876F9 /* Preview Assets.xcassets */; };
-		A80D5DE22689C33B003876F9 /* GoodWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5DE12689C33B003876F9 /* GoodWeatherTests.swift */; };
+		A80D5DE22689C33B003876F9 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5DE12689C33B003876F9 /* CalculatorTests.swift */; };
 		A80D5DED2689C33B003876F9 /* GoodWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5DEC2689C33B003876F9 /* GoodWeatherUITests.swift */; };
 		A80D5E002689C56F003876F9 /* DayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5DFF2689C56F003876F9 /* DayForecast.swift */; };
 		A80D5E022689C658003876F9 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5E012689C658003876F9 /* Forecast.swift */; };
@@ -44,6 +44,9 @@
 		A8D2E356268A16DA000C3CFB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E355268A16DA000C3CFB /* Router.swift */; };
 		A8D2E358268A1744000C3CFB /* ForecastDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E357268A1744000C3CFB /* ForecastDetails.swift */; };
 		A8D2E35A268A179D000C3CFB /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E359268A179D000C3CFB /* RouterView.swift */; };
+		B20D8904268B1C3E00C0C800 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D8903268B1C3E00C0C800 /* Calculator.swift */; };
+		B20D8906268B284300C0C800 /* TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D8905268B284300C0C800 /* TemplateTests.swift */; };
+		B20D8908268B2A4500C0C800 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D8907268B2A4500C0C800 /* Template.swift */; };
 		B26AD7F9268AD15100A47906 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = B26AD7F8268AD15100A47906 /* Resolver */; };
 		B26AD7FB268AD22100A47906 /* Resolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AD7FA268AD22100A47906 /* Resolver+ext.swift */; };
 		B26AD7FD268AD26D00A47906 /* ForecastResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AD7FC268AD26D00A47906 /* ForecastResolver.swift */; };
@@ -87,7 +90,7 @@
 		A80D5DD62689C33B003876F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A80D5DD82689C33B003876F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A80D5DDD2689C33B003876F9 /* GoodWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A80D5DE12689C33B003876F9 /* GoodWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherTests.swift; sourceTree = "<group>"; };
+		A80D5DE12689C33B003876F9 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
 		A80D5DE32689C33B003876F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A80D5DE82689C33B003876F9 /* GoodWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80D5DEC2689C33B003876F9 /* GoodWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherUITests.swift; sourceTree = "<group>"; };
@@ -124,6 +127,9 @@
 		A8D2E355268A16DA000C3CFB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A8D2E357268A1744000C3CFB /* ForecastDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetails.swift; sourceTree = "<group>"; };
 		A8D2E359268A179D000C3CFB /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
+		B20D8903268B1C3E00C0C800 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		B20D8905268B284300C0C800 /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
+		B20D8907268B2A4500C0C800 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		B26AD7FA268AD22100A47906 /* Resolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+ext.swift"; sourceTree = "<group>"; };
 		B26AD7FC268AD26D00A47906 /* ForecastResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResolver.swift; sourceTree = "<group>"; };
 		B26AD7FE268AD3E800A47906 /* usage.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = usage.txt; sourceTree = "<group>"; };
@@ -200,7 +206,8 @@
 		A80D5DE02689C33B003876F9 /* GoodWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				A80D5DE12689C33B003876F9 /* GoodWeatherTests.swift */,
+				A80D5DE12689C33B003876F9 /* CalculatorTests.swift */,
+				B20D8905268B284300C0C800 /* TemplateTests.swift */,
 				A80D5DE32689C33B003876F9 /* Info.plist */,
 			);
 			path = GoodWeatherTests;
@@ -353,6 +360,8 @@
 				A8D2E352268A15D3000C3CFB /* Router */,
 				A8D2E33E268A01D3000C3CFB /* DependencyInjection */,
 				A8D2E2E92689D7F2000C3CFB /* ApplicationFactory.swift */,
+				B20D8903268B1C3E00C0C800 /* Calculator.swift */,
+				B20D8907268B2A4500C0C800 /* Template.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -509,6 +518,7 @@
 				A80D5E052689C718003876F9 /* GetForecastUseCase.swift in Sources */,
 				A8D2E354268A163B000C3CFB /* Route.swift in Sources */,
 				A8D2E34A268A0563000C3CFB /* Text+ext.swift in Sources */,
+				B20D8904268B1C3E00C0C800 /* Calculator.swift in Sources */,
 				A8D2E356268A16DA000C3CFB /* Router.swift in Sources */,
 				A8D2E35A268A179D000C3CFB /* RouterView.swift in Sources */,
 				A80D5E192689CCBF003876F9 /* ForecastDto.swift in Sources */,
@@ -536,6 +546,7 @@
 				A80D5E072689C7B6003876F9 /* GetForecastError.swift in Sources */,
 				B26AD7FB268AD22100A47906 /* Resolver+ext.swift in Sources */,
 				A8D2E2EA2689D7F2000C3CFB /* ApplicationFactory.swift in Sources */,
+				B20D8908268B2A4500C0C800 /* Template.swift in Sources */,
 				A8D2E34C268A0563000C3CFB /* ButtonStyle.swift in Sources */,
 				A80D5DD02689C33A003876F9 /* GoodWeatherApp.swift in Sources */,
 				A80D5E0E2689C9B0003876F9 /* ForecastProviderError.swift in Sources */,
@@ -546,7 +557,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A80D5DE22689C33B003876F9 /* GoodWeatherTests.swift in Sources */,
+				A80D5DE22689C33B003876F9 /* CalculatorTests.swift in Sources */,
+				B20D8906268B284300C0C800 /* TemplateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,7 +753,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GoodWeatherTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -762,7 +774,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GoodWeatherTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,10 +1,3 @@
-//
-//  GoodWeatherUITests.swift
-//  GoodWeatherUITests
-//
-//  Created by Paweł Andrzejewski on 28/06/2021.
-//
-
 import XCTest
 
 class GoodWeatherUITests: XCTestCase {
