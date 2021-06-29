@@ -38,6 +38,20 @@ class CalculatorTests: XCTestCase {
         let result = try asyncCall(sut.getRandomPrime)
         XCTAssertEqual(result, 5)
     }
+    
+    func map<In, Out>(data: [In], mapper: (In) -> Out) -> [Out] {
+        var elemnts: [Out] = []
+        for element in data {
+            let result = mapper(element)
+            elements = elemnts.append(result)
+        }
+        return elemnts
+    }
+    
+    func test_map() {
+        let numbers = [1, 2, 3, 4]
+        let result = map(data: numbers) { $0 % 2 == 0 }
+    }
 
 }
 

@@ -7,11 +7,12 @@ extension Resolver.Name {
 extension Resolver {
 
     public static func registerForecastComponents() {
-        register { URLSessionForecastProvider() as ForecastProvider }
         register(name: .fake) { FakeForecastProvider() as ForecastProvider }
+        register { URLSessionForecastProvider() as ForecastProvider }
         register { ForecastViewModelMapper() }
+        register { try? DatabaseForecastRepository() as ForecastQueries & ForecastUpdates }
         register { CoreLocationProvider() as LocationProvider }
-        register { GetForecastService(forecastProvider: resolve()) }
+        register { GetForecastService() }
             .implements(GetForecastUseCase.self)
     }
     

@@ -13,6 +13,24 @@ class GoodWeatherUITests: XCTestCase {
         sleep(3)
         XCTAssertEqual(app.staticTexts["city"].label, "Berlin")
     }
+    
+    func testRefreshForecastForLocation() {
+        let app = XCUIApplication()
+        app.launch()
+        let location = app.images["location"]
+        location.tap()
+        allowLocationUpdates()
+        location.tap()
+        sleep(3)
+        XCTAssertEqual(app.staticTexts["city"].label, "Cupertino")
+    }
+    
+    private func allowLocationUpdates() {
+        let app = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        let button = app.alerts.firstMatch.buttons["Allow While Using App"]
+        _ = button.waitForExistence(timeout: 100)
+        button.tap()
+    }
 
 }
 

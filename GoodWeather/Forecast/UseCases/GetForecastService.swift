@@ -2,13 +2,16 @@ import Resolver
 
 final class GetForecastService: GetForecastUseCase {
     
+    @Injected
     private var forecastProvider: ForecastProvider
-    
-    init(forecastProvider: ForecastProvider) {
-        self.forecastProvider = forecastProvider
-    }
-    
+    @Injected
+    private var forecastReposiotry: ForecastQueries & ForecastUpdates
+
     func getForecast(for city: String, callback: @escaping (Result<Forecast, GetForecastError>) -> ()) {
+        let cachedForecast = forecastReposiotry.getAll(for: city)
+        if !cachedForecast.isEmpty {
+            callback(.success(Forecast(city: city, forecast: cachedForecast)))
+        }
         forecastProvider.getForecast(for: city) { self.onForecastLoaded(result: $0, callback: callback) }
     }
     
@@ -19,6 +22,8 @@ final class GetForecastService: GetForecastUseCase {
     private func onForecastLoaded(result: Result<Forecast, ForecastProviderError>, callback: @escaping (Result<Forecast, GetForecastError>) -> ()) {
         switch result {
         case .success(let forecast):
+            forecastReposiotry.deleteAll()
+            forecast.forecast.forEach { try? forecastReposiotry.save(dayForecast: $0, for: forecast.city) }
             callback(.success(forecast))
         case .failure(let error):
             print(error)
