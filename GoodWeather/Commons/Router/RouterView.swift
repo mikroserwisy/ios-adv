@@ -1,4 +1,5 @@
 import SwiftUI
+import Resolver
 
 struct RouterView: View {
     
@@ -8,7 +9,7 @@ struct RouterView: View {
     var body: some View {
         switch router.route {
         case .forecast:
-            ForecastView(viewModel: ForecastViewModel())
+            ForecastView(viewModel: ForecastViewModel(getForecastUseCase: Resolver.resolve()))
         case .forecastDetails:
             ForecastDetails()
         }

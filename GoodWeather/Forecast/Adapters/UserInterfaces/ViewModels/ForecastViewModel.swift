@@ -1,18 +1,19 @@
 import Foundation
 import Combine
+import Resolver
 
 final class ForecastViewModel: ObservableObject {
 
     @Published
     var currentForecast: DayForecastViewModel?
     @Published
-    var forecast: [DayForecastViewModel] = []
-    @Inject
+    var nextDaysForecast: [DayForecastViewModel] = []
+    @Injected
     private var getForecastUseCase: GetForecastUseCase
-    @Inject
+    @Injected
     private var mapper: ForecastViewModelMapper
 
-    init() {
+    init(getForecastUseCase: GetForecastUseCase) {
         refreshForecast(for: "warsaw")
     }
     
@@ -26,7 +27,7 @@ final class ForecastViewModel: ObservableObject {
             case .success(let data):
                 let forecast = data.forecast.map(mapper.toViewModel)
                 currentForecast = forecast.first
-                self.forecast = Array(forecast.dropFirst())
+                self.nextDaysForecast = Array(forecast.dropFirst())
             case .failure(_):
                 print("Refresh failed")
             }

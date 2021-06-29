@@ -1,11 +1,12 @@
+import Resolver
+
 final class GetForecastService: GetForecastUseCase {
     
-    @Inject
     private var forecastProvider: ForecastProvider
     
-    /*init(forecastProvider: ForecastProvider) {
+    init(forecastProvider: ForecastProvider) {
         self.forecastProvider = forecastProvider
-    }*/
+    }
     
     func getForecast(for city: String, callback: @escaping (Result<Forecast, GetForecastError>) -> ()) {
         forecastProvider.getForecast(for: city) { self.onForecastLoaded(result: $0, callback: callback) }

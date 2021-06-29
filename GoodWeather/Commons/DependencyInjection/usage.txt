@@ -1,0 +1,9 @@
+    private var container = Container {
+        Dependency { URLSessionForecastProvider() }
+        Dependency { ForecastViewModelMapper() }
+        Dependency { GetForecastService()}
+    }
+    
+    init() {
+        container.build()
+    }

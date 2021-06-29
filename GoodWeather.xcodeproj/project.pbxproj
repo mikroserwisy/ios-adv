@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -44,6 +44,10 @@
 		A8D2E356268A16DA000C3CFB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E355268A16DA000C3CFB /* Router.swift */; };
 		A8D2E358268A1744000C3CFB /* ForecastDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E357268A1744000C3CFB /* ForecastDetails.swift */; };
 		A8D2E35A268A179D000C3CFB /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2E359268A179D000C3CFB /* RouterView.swift */; };
+		B26AD7F9268AD15100A47906 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = B26AD7F8268AD15100A47906 /* Resolver */; };
+		B26AD7FB268AD22100A47906 /* Resolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AD7FA268AD22100A47906 /* Resolver+ext.swift */; };
+		B26AD7FD268AD26D00A47906 /* ForecastResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AD7FC268AD26D00A47906 /* ForecastResolver.swift */; };
+		B26AD7FF268AD3E800A47906 /* usage.txt in Resources */ = {isa = PBXBuildFile; fileRef = B26AD7FE268AD3E800A47906 /* usage.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +124,9 @@
 		A8D2E355268A16DA000C3CFB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A8D2E357268A1744000C3CFB /* ForecastDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetails.swift; sourceTree = "<group>"; };
 		A8D2E359268A179D000C3CFB /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
+		B26AD7FA268AD22100A47906 /* Resolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+ext.swift"; sourceTree = "<group>"; };
+		B26AD7FC268AD26D00A47906 /* ForecastResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResolver.swift; sourceTree = "<group>"; };
+		B26AD7FE268AD3E800A47906 /* usage.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = usage.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26AD7F9268AD15100A47906 /* Resolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,8 +181,7 @@
 				A8D2E351268A15C6000C3CFB /* Commons */,
 				A80D5DFA2689C3A6003876F9 /* Forecast */,
 				A80D5DCF2689C33A003876F9 /* GoodWeatherApp.swift */,
-				A8D2E359268A179D000C3CFB /* RouterView.swift */,
-				A8D2E2E92689D7F2000C3CFB /* ApplicationFactory.swift */,
+				B26AD7FA268AD22100A47906 /* Resolver+ext.swift */,
 				A80D5DD32689C33B003876F9 /* Assets.xcassets */,
 				A80D5DD82689C33B003876F9 /* Info.plist */,
 				A80D5DD52689C33B003876F9 /* Preview Content */,
@@ -215,6 +222,7 @@
 				A80D5DFD2689C45B003876F9 /* Ports */,
 				A80D5DFC2689C431003876F9 /* UseCases */,
 				A80D5DFB2689C3F2003876F9 /* Models */,
+				B26AD7FC268AD26D00A47906 /* ForecastResolver.swift */,
 			);
 			path = Forecast;
 			sourceTree = "<group>";
@@ -322,6 +330,7 @@
 				A8D2E30F2689F3F2000C3CFB /* Dependency.swift */,
 				A8D2E3132689F41E000C3CFB /* Inject.swift */,
 				A8D2E3112689F40B000C3CFB /* Container.swift */,
+				B26AD7FE268AD3E800A47906 /* usage.txt */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -343,6 +352,7 @@
 			children = (
 				A8D2E352268A15D3000C3CFB /* Router */,
 				A8D2E33E268A01D3000C3CFB /* DependencyInjection */,
+				A8D2E2E92689D7F2000C3CFB /* ApplicationFactory.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -352,6 +362,7 @@
 			children = (
 				A8D2E353268A163B000C3CFB /* Route.swift */,
 				A8D2E355268A16DA000C3CFB /* Router.swift */,
+				A8D2E359268A179D000C3CFB /* RouterView.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -373,6 +384,9 @@
 			dependencies = (
 			);
 			name = GoodWeather;
+			packageProductDependencies = (
+				B26AD7F8268AD15100A47906 /* Resolver */,
+			);
 			productName = GoodWeather;
 			productReference = A80D5DCC2689C339003876F9 /* GoodWeather.app */;
 			productType = "com.apple.product-type.application";
@@ -444,6 +458,9 @@
 				Base,
 			);
 			mainGroup = A80D5DC32689C339003876F9;
+			packageReferences = (
+				B26AD7F7268AD15100A47906 /* XCRemoteSwiftPackageReference "Resolver" */,
+			);
 			productRefGroup = A80D5DCD2689C339003876F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -460,6 +477,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26AD7FF268AD3E800A47906 /* usage.txt in Resources */,
 				A80D5DD72689C33B003876F9 /* Preview Assets.xcassets in Resources */,
 				A80D5DD42689C33B003876F9 /* Assets.xcassets in Resources */,
 			);
@@ -507,6 +525,7 @@
 				A80D5E112689CADE003876F9 /* TemperatureDto.swift in Sources */,
 				A80D5E152689CBC5003876F9 /* DayForecastDto.swift in Sources */,
 				A80D5E092689C8A9003876F9 /* GetForecastService.swift in Sources */,
+				B26AD7FD268AD26D00A47906 /* ForecastResolver.swift in Sources */,
 				A8D2E30B2689DCD7000C3CFB /* URLSessionForecastProvider.swift in Sources */,
 				A8D2E340268A02DA000C3CFB /* Inject.swift in Sources */,
 				A8D2E343268A049B000C3CFB /* DayForecastView.swift in Sources */,
@@ -515,6 +534,7 @@
 				A80D5E172689CC86003876F9 /* CityDto.swift in Sources */,
 				A8D2E350268A12A0000C3CFB /* ForecastViewModelMapper.swift in Sources */,
 				A80D5E072689C7B6003876F9 /* GetForecastError.swift in Sources */,
+				B26AD7FB268AD22100A47906 /* Resolver+ext.swift in Sources */,
 				A8D2E2EA2689D7F2000C3CFB /* ApplicationFactory.swift in Sources */,
 				A8D2E34C268A0563000C3CFB /* ButtonStyle.swift in Sources */,
 				A80D5DD02689C33A003876F9 /* GoodWeatherApp.swift in Sources */,
@@ -834,6 +854,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B26AD7F7268AD15100A47906 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B26AD7F8268AD15100A47906 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B26AD7F7268AD15100A47906 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A80D5DC42689C339003876F9 /* Project object */;
 }

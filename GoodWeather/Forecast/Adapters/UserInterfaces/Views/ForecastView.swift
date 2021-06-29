@@ -1,20 +1,16 @@
 import SwiftUI
+import Resolver
 
 struct ForecastView: View {
     
     @ObservedObject
     var viewModel : ForecastViewModel
-    @EnvironmentObject
-    var router: Router
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.primary, Color.secondary]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [Color("Blue"), Color("Black")]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack {
-                Button("Show details") {
-                    router.route = .forecastDetails
-                }
                 Spacer()
                 if let currentForecast = viewModel.currentForecast{
                     Image(systemName: currentForecast.icon)
@@ -31,7 +27,7 @@ struct ForecastView: View {
                 }
                 Spacer()
                 HStack(spacing: 16) {
-                    ForEach(viewModel.forecast, id: \.date, content: DayForecastView.init)
+                    ForEach(viewModel.nextDaysForecast, id: \.date, content: DayForecastView.init)
                 }
                 Spacer()
             }
@@ -41,6 +37,6 @@ struct ForecastView: View {
 
 struct ForecastView_Previews: PreviewProvider {
     static var previews: some View {
-        ForecastView(viewModel: ForecastViewModel())
+        ForecastView(viewModel: ForecastViewModel(getForecastUseCase: GetForecastService(forecastProvider: FakeForecastProvider())))
     }
 }
