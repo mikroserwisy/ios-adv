@@ -22,7 +22,7 @@ struct GoodWeatherApp: App {
                         Image(systemName: "list.dash")
                         Text("Details")
                     }
-                ProfileView()
+                ProfileView(viewModel: ProfileViewModel())
                     .tabItem {
                         Image(systemName: "person")
                         Text("Profile")
