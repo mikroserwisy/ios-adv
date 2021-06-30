@@ -1,7 +1,8 @@
 import Foundation
 
-struct DayForecastViewModel {
+struct DayForecastViewModel: Identifiable {
     
+    let id = UUID()
     let date: String
     let temperature: String
     let pressure: String

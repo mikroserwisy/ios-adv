@@ -11,7 +11,7 @@ struct RouterView: View {
         case .forecast:
             ForecastView(viewModel: ForecastViewModel())
         case .forecastDetails:
-            ForecastDetails()
+            ForecastDetailsView(viewModel: ForecastDetailsViewModel())
         }
     }
     

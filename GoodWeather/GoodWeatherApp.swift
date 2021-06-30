@@ -17,7 +17,7 @@ struct GoodWeatherApp: App {
                         Image(systemName: "sun.max.fill")
                         Text("Forecast")
                     }
-                ForecastDetails()
+                ForecastDetailsView(viewModel: ForecastDetailsViewModel())
                     .tabItem {
                         Image(systemName: "list.dash")
                         Text("Details")
