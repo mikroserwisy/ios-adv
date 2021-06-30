@@ -18,24 +18,24 @@ extension CityEntity {
 
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
-    @NSManaged public var forecat: NSSet?
+    @NSManaged public var forecast: NSSet?
 
 }
 
-// MARK: Generated accessors for forecat
+// MARK: Generated accessors for forecast
 extension CityEntity {
 
-    @objc(addForecatObject:)
-    @NSManaged public func addToForecat(_ value: DayForecastEntity)
+    @objc(addForecastObject:)
+    @NSManaged public func addToForecast(_ value: DayForecastEntity)
 
-    @objc(removeForecatObject:)
-    @NSManaged public func removeFromForecat(_ value: DayForecastEntity)
+    @objc(removeForecastObject:)
+    @NSManaged public func removeFromForecast(_ value: DayForecastEntity)
 
-    @objc(addForecat:)
-    @NSManaged public func addToForecat(_ values: NSSet)
+    @objc(addForecast:)
+    @NSManaged public func addToForecast(_ values: NSSet)
 
-    @objc(removeForecat:)
-    @NSManaged public func removeFromForecat(_ values: NSSet)
+    @objc(removeForecast:)
+    @NSManaged public func removeFromForecast(_ values: NSSet)
 
 }
 

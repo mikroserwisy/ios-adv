@@ -22,10 +22,10 @@ final class GetForecastService: GetForecastUseCase {
     
     private func onForecastLoaded(result: Result<Forecast, ForecastProviderError>, callback: @escaping (Result<Forecast, GetForecastError>) -> ()) {
         switch result {
-        case .success(let forecast):
+        case .success(let data):
             forecastReposiotry.deleteAll()
-            forecast.forecast.forEach { try? forecastReposiotry.save(dayForecast: $0, for: forecast.city) }
-            callback(.success(forecast))
+            try? forecastReposiotry.save(forecast: data.forecast, for: data.city)
+            callback(.success(data))
         case .failure(let error):
             print(error)
             callback(.failure(.refreshFailed))

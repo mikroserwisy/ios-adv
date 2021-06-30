@@ -16,10 +16,10 @@ extension DayForecastEntity {
         return NSFetchRequest<DayForecastEntity>(entityName: "DayForecastEntity")
     }
 
-    @NSManaged public var conditions: String
-    @NSManaged public var date: Date
-    @NSManaged public var id: UUID
-    @NSManaged public var imageName: String
+    @NSManaged public var conditions: String?
+    @NSManaged public var date: Date?
+    @NSManaged public var internalId: UUID?
+    @NSManaged public var imageName: String?
     @NSManaged public var pressure: Double
     @NSManaged public var temperature: Double
 

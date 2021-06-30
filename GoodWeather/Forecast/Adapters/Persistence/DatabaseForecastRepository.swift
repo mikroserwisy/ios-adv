@@ -30,9 +30,11 @@ final class DatabaseForecastRepository: ForecastQueries, ForecastUpdates {
         })
     }
     
-    func save(dayForecast: DayForecast, for city: String) throws {
-        let insert = forecastTable.insert(id <- UUID().uuidString, date <- dayForecast.date, temperature <- dayForecast.temperature, pressure <- dayForecast.pressure, icon <- dayForecast.icon, description <- dayForecast.description, self.city <- city)
-        try db.run(insert)
+    func save(forecast: [DayForecast], for city: String) throws {
+        for dayForecast in forecast {
+            let insert = forecastTable.insert(id <- UUID().uuidString, date <- dayForecast.date, temperature <- dayForecast.temperature, pressure <- dayForecast.pressure, icon <- dayForecast.icon, description <- dayForecast.description, self.city <- city)
+            try db.run(insert)
+        }
     }
     
     func getById(id: UUID, callback: @escaping (DayForecast) -> Void) {

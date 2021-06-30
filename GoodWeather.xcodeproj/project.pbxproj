@@ -59,11 +59,11 @@
 		B20D892B268B6A1C00C0C800 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D892A268B6A1C00C0C800 /* ProfileViewModel.swift */; };
 		B20D89B1268C78EF00C0C800 /* ForecastModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20D89AF268C78EF00C0C800 /* ForecastModel.xcdatamodeld */; };
 		B20D89B3268C7AD500C0C800 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D89B2268C7AD500C0C800 /* CoreDataStack.swift */; };
-		B20D89BF268C7E4C00C0C800 /* CoreDataForecsatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D89BE268C7E4C00C0C800 /* CoreDataForecsatRepository.swift */; };
-		B20D89C8268C811800C0C800 /* DayForecastEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D89C4268C811800C0C800 /* DayForecastEntity+CoreDataClass.swift */; };
-		B20D89C9268C811800C0C800 /* DayForecastEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D89C5268C811800C0C800 /* DayForecastEntity+CoreDataProperties.swift */; };
-		B20D89CA268C811800C0C800 /* CityEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D89C6268C811800C0C800 /* CityEntity+CoreDataClass.swift */; };
-		B20D89CB268C811800C0C800 /* CityEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D89C7268C811800C0C800 /* CityEntity+CoreDataProperties.swift */; };
+		B20D89BF268C7E4C00C0C800 /* CoreDataForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D89BE268C7E4C00C0C800 /* CoreDataForecastRepository.swift */; };
+		B20D89D8268C9CA100C0C800 /* DayForecastEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D89D4268C9CA100C0C800 /* DayForecastEntity+CoreDataClass.swift */; };
+		B20D89D9268C9CA100C0C800 /* DayForecastEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D89D5268C9CA100C0C800 /* DayForecastEntity+CoreDataProperties.swift */; };
+		B20D89DA268C9CA100C0C800 /* CityEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D89D6268C9CA100C0C800 /* CityEntity+CoreDataClass.swift */; };
+		B20D89DB268C9CA100C0C800 /* CityEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D89D7268C9CA100C0C800 /* CityEntity+CoreDataProperties.swift */; };
 		B26AD7F9268AD15100A47906 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = B26AD7F8268AD15100A47906 /* Resolver */; };
 		B26AD7FB268AD22100A47906 /* Resolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AD7FA268AD22100A47906 /* Resolver+ext.swift */; };
 		B26AD7FD268AD26D00A47906 /* ForecastResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AD7FC268AD26D00A47906 /* ForecastResolver.swift */; };
@@ -158,11 +158,11 @@
 		B20D892A268B6A1C00C0C800 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		B20D89B0268C78EF00C0C800 /* ForecastModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ForecastModel.xcdatamodel; sourceTree = "<group>"; };
 		B20D89B2268C7AD500C0C800 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		B20D89BE268C7E4C00C0C800 /* CoreDataForecsatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataForecsatRepository.swift; sourceTree = "<group>"; };
-		B20D89C4268C811800C0C800 /* DayForecastEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayForecastEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B20D89C5268C811800C0C800 /* DayForecastEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayForecastEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B20D89C6268C811800C0C800 /* CityEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B20D89C7268C811800C0C800 /* CityEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B20D89BE268C7E4C00C0C800 /* CoreDataForecastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataForecastRepository.swift; sourceTree = "<group>"; };
+		B20D89D4268C9CA100C0C800 /* DayForecastEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayForecastEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B20D89D5268C9CA100C0C800 /* DayForecastEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayForecastEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B20D89D6268C9CA100C0C800 /* CityEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B20D89D7268C9CA100C0C800 /* CityEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B26AD7FA268AD22100A47906 /* Resolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+ext.swift"; sourceTree = "<group>"; };
 		B26AD7FC268AD26D00A47906 /* ForecastResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResolver.swift; sourceTree = "<group>"; };
 		B26AD7FE268AD3E800A47906 /* usage.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = usage.txt; sourceTree = "<group>"; };
@@ -445,14 +445,14 @@
 		B20D891E268B58F500C0C800 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				B20D89C4268C811800C0C800 /* DayForecastEntity+CoreDataClass.swift */,
-				B20D89C5268C811800C0C800 /* DayForecastEntity+CoreDataProperties.swift */,
-				B20D89C6268C811800C0C800 /* CityEntity+CoreDataClass.swift */,
-				B20D89C7268C811800C0C800 /* CityEntity+CoreDataProperties.swift */,
+				B20D89D4268C9CA100C0C800 /* DayForecastEntity+CoreDataClass.swift */,
+				B20D89D5268C9CA100C0C800 /* DayForecastEntity+CoreDataProperties.swift */,
+				B20D89D6268C9CA100C0C800 /* CityEntity+CoreDataClass.swift */,
+				B20D89D7268C9CA100C0C800 /* CityEntity+CoreDataProperties.swift */,
 				B20D891F268B590600C0C800 /* DatabaseForecastRepository.swift */,
 				B20D89AF268C78EF00C0C800 /* ForecastModel.xcdatamodeld */,
 				B20D89B2268C7AD500C0C800 /* CoreDataStack.swift */,
-				B20D89BE268C7E4C00C0C800 /* CoreDataForecsatRepository.swift */,
+				B20D89BE268C7E4C00C0C800 /* CoreDataForecastRepository.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -634,7 +634,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "xcrun simctl ${TARGET_DEVICE_IDENTIFIER}\nxcrun simctl uninstall ${TARGET_DEVICE_IDENTIFIER} pl.training.GoodWeather\n";
+			shellScript = "
+";
 		};
 		B20D89BD268C7DF600C0C800 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -673,8 +674,8 @@
 				A8D2E34E268A07E1000C3CFB /* Color+ext.swift in Sources */,
 				A8D2E3082689DCB3000C3CFB /* ForecastViewModel.swift in Sources */,
 				A8D2E3092689DCB3000C3CFB /* ForecastView.swift in Sources */,
-				B20D89C9268C811800C0C800 /* DayForecastEntity+CoreDataProperties.swift in Sources */,
-				B20D89BF268C7E4C00C0C800 /* CoreDataForecsatRepository.swift in Sources */,
+				B20D89D9268C9CA100C0C800 /* DayForecastEntity+CoreDataProperties.swift in Sources */,
+				B20D89BF268C7E4C00C0C800 /* CoreDataForecastRepository.swift in Sources */,
 				B20D890C268B3FEB00C0C800 /* SettingsView.swift in Sources */,
 				A8D2E33F268A02D7000C3CFB /* Dependency.swift in Sources */,
 				A80D5E002689C56F003876F9 /* DayForecast.swift in Sources */,
@@ -684,7 +685,7 @@
 				A8D2E341268A02DD000C3CFB /* Container.swift in Sources */,
 				B20D891C268B589A00C0C800 /* ForecastQueries.swift in Sources */,
 				A8D2E3072689DCB3000C3CFB /* DayForecastViewModel.swift in Sources */,
-				B20D89CB268C811800C0C800 /* CityEntity+CoreDataProperties.swift in Sources */,
+				B20D89DB268C9CA100C0C800 /* CityEntity+CoreDataProperties.swift in Sources */,
 				A80D5E112689CADE003876F9 /* TemperatureDto.swift in Sources */,
 				A80D5E152689CBC5003876F9 /* DayForecastDto.swift in Sources */,
 				A80D5E092689C8A9003876F9 /* GetForecastService.swift in Sources */,
@@ -692,7 +693,7 @@
 				A8D2E30B2689DCD7000C3CFB /* URLSessionForecastProvider.swift in Sources */,
 				A8D2E340268A02DA000C3CFB /* Inject.swift in Sources */,
 				A8D2E343268A049B000C3CFB /* DayForecastView.swift in Sources */,
-				B20D89C8268C811800C0C800 /* DayForecastEntity+CoreDataClass.swift in Sources */,
+				B20D89D8268C9CA100C0C800 /* DayForecastEntity+CoreDataClass.swift in Sources */,
 				A8D2E349268A0563000C3CFB /* Image+ext.swift in Sources */,
 				A80D5E132689CB54003876F9 /* ConditionsDto.swift in Sources */,
 				B20D8911268B4D5700C0C800 /* LocationProvider.swift in Sources */,
@@ -704,7 +705,7 @@
 				A80D5E072689C7B6003876F9 /* GetForecastError.swift in Sources */,
 				B20D8929268B636F00C0C800 /* ProfileView.swift in Sources */,
 				B20D89B3268C7AD500C0C800 /* CoreDataStack.swift in Sources */,
-				B20D89CA268C811800C0C800 /* CityEntity+CoreDataClass.swift in Sources */,
+				B20D89DA268C9CA100C0C800 /* CityEntity+CoreDataClass.swift in Sources */,
 				B20D892B268B6A1C00C0C800 /* ProfileViewModel.swift in Sources */,
 				B26AD7FB268AD22100A47906 /* Resolver+ext.swift in Sources */,
 				A8D2E2EA2689D7F2000C3CFB /* ApplicationFactory.swift in Sources */,
