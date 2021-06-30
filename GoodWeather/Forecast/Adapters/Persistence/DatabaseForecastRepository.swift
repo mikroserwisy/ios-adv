@@ -35,18 +35,18 @@ final class DatabaseForecastRepository: ForecastQueries, ForecastUpdates {
         try db.run(insert)
     }
     
-    func getById(id: UUID) -> DayForecast? {
+    func getById(id: UUID, callback: @escaping (DayForecast) -> Void) {
         guard let row = try? db.pluck(forecastTable.filter(id.uuidString == self.id)) else {
-            return nil
+            return
         }
-        return toModel(row: row)
+        callback(toModel(row: row))
     }
     
-    func getAll(for city: String) -> [DayForecast] {
+    func getAll(for city: String, callback: @escaping ([DayForecast]) -> Void) {
         guard let rows = try? db.prepare(forecastTable.filter(city == self.city)) else {
-            return []
+            return
         }
-        return Array(rows).map(toModel(row:))
+        callback(Array(rows).map(toModel(row:)))
     }
     
     func deleteAll() {

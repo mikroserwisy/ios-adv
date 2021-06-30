@@ -8,9 +8,10 @@ final class GetForecastService: GetForecastUseCase {
     private var forecastReposiotry: ForecastQueries & ForecastUpdates
 
     func getForecast(for city: String, callback: @escaping (Result<Forecast, GetForecastError>) -> ()) {
-        let cachedForecast = forecastReposiotry.getAll(for: city)
-        if !cachedForecast.isEmpty {
-            callback(.success(Forecast(city: city, forecast: cachedForecast)))
+        forecastReposiotry.getAll(for: city) { cachedForecast in
+            if !cachedForecast.isEmpty {
+                callback(.success(Forecast(city: city, forecast: cachedForecast)))
+            }
         }
         forecastProvider.getForecast(for: city) { self.onForecastLoaded(result: $0, callback: callback) }
     }
