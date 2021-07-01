@@ -8,8 +8,8 @@ extension Resolver {
 
     public static func registerForecastComponents() {
         register { CoreDataStack(modelName: "ForecastModel") }
-        register(name: .fake) { FakeForecastProvider() as ForecastProvider }
-        register { URLSessionForecastProvider() as ForecastProvider }
+        //register(name: .fake) { FakeForecastProvider() as ForecastProvider }
+        register { FakeForecastProvider() as ForecastProvider }
         register { ForecastViewModelMapper() }
         register { CoreDataForecastRepository() as ForecastQueries & ForecastUpdates }
         // register { try? DatabaseForecastRepository() as ForecastQueries & ForecastUpdates }

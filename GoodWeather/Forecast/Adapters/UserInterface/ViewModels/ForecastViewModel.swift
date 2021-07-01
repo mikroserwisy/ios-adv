@@ -23,11 +23,11 @@ final class ForecastViewModel: ObservableObject {
     @Injected
     var profileStore: ProfileStore
     private var disposableBag = Set<AnyCancellable>()
+    @UserProperty(key: "cityName", defaultValue: "Warsaw")
+    var cachedCityName: String
     
     init() {
-        if let cityName = UserDefaults.standard.string(forKey: "cityName") {
-            refreshForecast(for: cityName)
-        }
+        refreshForecast(for: cachedCityName)
         locationProvider.location.sink { location in
             self.onForecastLoaded(publisher: self.getForecastUseCase.getForecast(for: location))
         }

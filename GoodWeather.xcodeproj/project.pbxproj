@@ -69,6 +69,9 @@
 		B2349C33268DE8BB003CD362 /* CombineProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2349C32268DE8BB003CD362 /* CombineProfileStore.swift */; };
 		B2349C35268DE9C6003CD362 /* ProfileResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2349C34268DE9C6003CD362 /* ProfileResolver.swift */; };
 		B2349C39268DF688003CD362 /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2349C38268DF688003CD362 /* ProfileStore.swift */; };
+		B2349C3B268E046F003CD362 /* Capitalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2349C3A268E046F003CD362 /* Capitalized.swift */; };
+		B2349C3D268E055D003CD362 /* UserProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2349C3C268E055D003CD362 /* UserProperty.swift */; };
+		B2349C3F268E09FC003CD362 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B2349C3E268E09FC003CD362 /* data.json */; };
 		B26AD7F9268AD15100A47906 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = B26AD7F8268AD15100A47906 /* Resolver */; };
 		B26AD7FB268AD22100A47906 /* Resolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AD7FA268AD22100A47906 /* Resolver+ext.swift */; };
 		B26AD7FD268AD26D00A47906 /* ForecastResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AD7FC268AD26D00A47906 /* ForecastResolver.swift */; };
@@ -173,6 +176,9 @@
 		B2349C32268DE8BB003CD362 /* CombineProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineProfileStore.swift; sourceTree = "<group>"; };
 		B2349C34268DE9C6003CD362 /* ProfileResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResolver.swift; sourceTree = "<group>"; };
 		B2349C38268DF688003CD362 /* ProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
+		B2349C3A268E046F003CD362 /* Capitalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitalized.swift; sourceTree = "<group>"; };
+		B2349C3C268E055D003CD362 /* UserProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProperty.swift; sourceTree = "<group>"; };
+		B2349C3E268E09FC003CD362 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		B26AD7FA268AD22100A47906 /* Resolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+ext.swift"; sourceTree = "<group>"; };
 		B26AD7FC268AD26D00A47906 /* ForecastResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResolver.swift; sourceTree = "<group>"; };
 		B26AD7FE268AD3E800A47906 /* usage.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = usage.txt; sourceTree = "<group>"; };
@@ -236,6 +242,7 @@
 				A80D5DD32689C33B003876F9 /* Assets.xcassets */,
 				A80D5DD82689C33B003876F9 /* Info.plist */,
 				A80D5DD52689C33B003876F9 /* Preview Content */,
+				B2349C3E268E09FC003CD362 /* data.json */,
 			);
 			path = GoodWeather;
 			sourceTree = "<group>";
@@ -414,6 +421,8 @@
 				B20D8903268B1C3E00C0C800 /* Calculator.swift */,
 				B20D8907268B2A4500C0C800 /* Template.swift */,
 				B20D8909268B327200C0C800 /* UI+ext.swift */,
+				B2349C3A268E046F003CD362 /* Capitalized.swift */,
+				B2349C3C268E055D003CD362 /* UserProperty.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -646,6 +655,7 @@
 				B26AD7FF268AD3E800A47906 /* usage.txt in Resources */,
 				A80D5DD72689C33B003876F9 /* Preview Assets.xcassets in Resources */,
 				A80D5DD42689C33B003876F9 /* Assets.xcassets in Resources */,
+				B2349C3F268E09FC003CD362 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,8 +767,10 @@
 				B2349C30268DE795003CD362 /* User.swift in Sources */,
 				B20D8929268B636F00C0C800 /* ProfileView.swift in Sources */,
 				B20D89B3268C7AD500C0C800 /* CoreDataStack.swift in Sources */,
+				B2349C3D268E055D003CD362 /* UserProperty.swift in Sources */,
 				B20D89DA268C9CA100C0C800 /* CityEntity+CoreDataClass.swift in Sources */,
 				B20D892B268B6A1C00C0C800 /* ProfileViewModel.swift in Sources */,
+				B2349C3B268E046F003CD362 /* Capitalized.swift in Sources */,
 				B26AD7FB268AD22100A47906 /* Resolver+ext.swift in Sources */,
 				A8D2E2EA2689D7F2000C3CFB /* ApplicationFactory.swift in Sources */,
 				B20D8908268B2A4500C0C800 /* Template.swift in Sources */,
