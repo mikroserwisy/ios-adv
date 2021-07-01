@@ -15,6 +15,11 @@ struct ForecastView: View {
             LinearGradient(gradient: Gradient(colors: [Color("Blue"), Color("Black")]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack {
+                if !viewModel.userName.isEmpty {
+                    Text("Curret user: \(viewModel.userName)")
+                        .defaultStyle()
+                }
+                
                 HStack {
                     Image(systemName: "location")
                         .templateStyle(width: 20, height: 20)

@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import Resolver
 
 final class ProfileViewModel: ObservableObject {
     
@@ -14,18 +15,25 @@ final class ProfileViewModel: ObservableObject {
     @Published var cardCvv = ""
     @Published var cardExpirationDate = Date()
     @Published var isFormValid = false
-    
+    @Injected
+    private var profileStore: ProfileStore
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        Publishers.CombineLatest3(
+        let isValid = Publishers.CombineLatest3(
             emailIsValid(),
             passwordIsValid(),
             passwordMatchingConfirmation()
         )
         .debounce(for: .milliseconds(1000), scheduler: RunLoop.main)
         .map { $0 && $1 && $2 }
-        .assign(to: &$isFormValid)
+        isValid.assign(to: &$isFormValid)
+
+        isValid
+            .filter { $0 }
+            .map { _ in User(firstName: self.firstName, subscriber: self.subscriber) }
+            .sink(receiveValue: profileStore.update)
+            .store(in: &subscriptions)
     }
     
     private func emailIsValid() -> AnyPublisher<Bool, Never> {

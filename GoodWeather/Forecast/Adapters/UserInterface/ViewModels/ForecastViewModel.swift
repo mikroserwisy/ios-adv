@@ -12,12 +12,16 @@ final class ForecastViewModel: ObservableObject {
     var cityName: String = ""
     @Published
     var errors = false
+    @Published
+    var userName = ""
     @Injected
     private var getForecastUseCase: GetForecastUseCase
     @Injected
     private var mapper: ForecastViewModelMapper
     @Injected
     private var locationProvider: LocationProvider
+    @Injected
+    var profileStore: ProfileStore
     private var disposableBag = Set<AnyCancellable>()
     
     init() {
@@ -28,6 +32,9 @@ final class ForecastViewModel: ObservableObject {
             self.onForecastLoaded(publisher: self.getForecastUseCase.getForecast(for: location))
         }
         .store(in: &disposableBag)
+        profileStore.user
+            .map { $0.firstName }
+            .assign(to: &$userName)
     }
     
     func refreshForecast(for city: String) {
