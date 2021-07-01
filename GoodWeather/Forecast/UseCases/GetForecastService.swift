@@ -7,17 +7,24 @@ final class GetForecastService: GetForecastUseCase {
     private var forecastProvider: ForecastProvider
     @Injected
     private var forecastReposiotry: ForecastQueries & ForecastUpdates
-
+    private var disposableBag = Set<AnyCancellable>()
+    
     func getForecast(for city: String) -> AnyPublisher<Forecast, GetForecastError> {
-//        forecastReposiotry.getAll(for: city) { cachedForecast in
-//            if !cachedForecast.isEmpty {
-//                callback(.success(Forecast(city: city, forecast: cachedForecast)))
-//            }
-//        }
-        return forecastProvider.getForecast(for: city)
+        let result = PassthroughSubject<Forecast, GetForecastError>()
+        
+        forecastProvider.getForecast(for: city)
             .mapError { _ in GetForecastError.refreshFailed }
-            .eraseToAnyPublisher()
-            
+            .sink(receiveCompletion: { _ in }) {
+                self.forecastReposiotry.deleteAll()
+                try? self.forecastReposiotry.save(forecast: $0.forecast, for: $0.city)
+                result.send($0)
+            }
+            .store(in: &disposableBag)
+
+        forecastReposiotry.getAll(for: city) { cachedForecast in
+            result.send(Forecast(city: city, forecast: cachedForecast))
+        }
+        return result.eraseToAnyPublisher()
     }
     
     func getForecast(for location: (Double, Double)) -> AnyPublisher<Forecast, GetForecastError> {
@@ -25,17 +32,5 @@ final class GetForecastService: GetForecastUseCase {
             .mapError { _ in GetForecastError.refreshFailed }
             .eraseToAnyPublisher()
     }
-    
-//    private func onForecastLoaded(result: Result<Forecast, ForecastProviderError>, callback: @escaping (Result<Forecast, GetForecastError>) -> ()) {
-//        switch result {
-//        case .success(let data):
-//            forecastReposiotry.deleteAll()
-//            try? forecastReposiotry.save(forecast: data.forecast, for: data.city)
-//            callback(.success(data))
-//        case .failure(let error):
-//            print(error)
-//            callback(.failure(.refreshFailed))
-//        }
-//    }
 
 }
