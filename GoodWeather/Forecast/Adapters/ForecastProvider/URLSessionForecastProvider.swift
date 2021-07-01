@@ -1,49 +1,35 @@
 import Foundation
+import Combine
 
 final class URLSessionForecastProvider: ForecastProvider {
     
     private let url = "https://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&units=metric&APPID=b933866e6489f58987b2898c89f542b8"
  
-    func getForecast(for city: String, callback: @escaping (Result<Forecast, ForecastProviderError>) -> ()) {
-        guard let requestURL = URL(string: "\(url)&q=\(city)") else {
-            callback(.failure(.invalidRequestUrl))
-            return
-        }
-        getForecast(requestURL: requestURL, callback: callback)
+    private let decoder: JSONDecoder
+    
+    init(decoder: JSONDecoder = JSONDecoder()) {
+        self.decoder = decoder
     }
     
-    func getForecast(for location: (Double, Double), callback: @escaping (Result<Forecast, ForecastProviderError>) -> ()) {
-        guard let requestURL = URL(string: "\(url)&lon=\(location.0)&lat=\(location.1)") else {
-            callback(.failure(.invalidRequestUrl))
-            return
-        }
-        getForecast(requestURL: requestURL, callback: callback)
+    func getForecast(for city: String) -> AnyPublisher<Forecast, ForecastProviderError>   {
+        return getForecast(requestURL: "\(url)&q=\(city)")
     }
     
-    private func getForecast(requestURL: URL, callback: @escaping (Result<Forecast, ForecastProviderError>) -> ()) {
-        let request = URLRequest(url: requestURL)
-        URLSession.shared.dataTask(with: request) { text, response, error in
-            if let error = error {
-                callback(.failure(.error(error.localizedDescription)))
-                return
-            }
-            let responseStatusCode = (response as? HTTPURLResponse)?.statusCode ?? -1
-            guard (200...299).contains(responseStatusCode) else {
-                callback(.failure(.requestFailed(responseStatusCode)))
-                return
-            }
-            guard let json = text else {
-                callback(.failure(.invalidResponseData))
-                return
-            }
-            do {
-                let response = try JSONDecoder().decode(ForecastDto.self, from: json)
-                let forecast = Forecast(city: response.city.name, forecast: response.forecast.map(self.toModel))
-                callback(.success(forecast))
-            } catch {
-                callback(.failure(.parsingFailed(error.localizedDescription)))
-            }
-        }.resume()
+    func getForecast(for location: (Double, Double)) -> AnyPublisher<Forecast, ForecastProviderError> {
+        return getForecast(requestURL: "\(url)&lon=\(location.0)&lat=\(location.1)")
+    }
+    
+    private func getForecast(requestURL: String) -> AnyPublisher<Forecast, ForecastProviderError>  {
+        guard let requestURL = URL(string: requestURL) else {
+            return Fail(error: ForecastProviderError.invalidRequestUrl).eraseToAnyPublisher()
+        }
+        return URLSession.shared.dataTaskPublisher(for: requestURL)
+            .mapError { ForecastProviderError.requestFailed($0.errorCode) }
+            .map { $0.data }
+            .decode(type: ForecastDto.self, decoder: decoder)
+            .mapError { ForecastProviderError.parsingFailed($0.localizedDescription) }
+            .map { Forecast(city: $0.city.name, forecast: $0.forecast.map(self.toModel)) }
+            .eraseToAnyPublisher()
     }
     
     private func toModel(dayForecastDto: DayForecastDto) -> DayForecast {
